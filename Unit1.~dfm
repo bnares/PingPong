@@ -1,10 +1,16 @@
 object Form1: TForm1
-  Left = 178
-  Top = 128
-  Width = 985
-  Height = 547
+  Left = 248
+  Top = 96
+  Width = 969
+  Height = 469
   Caption = 'Form1'
   Color = clBtnFace
+  Constraints.MaxHeight = 469
+  Constraints.MaxWidth = 969
+  Constraints.MinHeight = 469
+  Constraints.MinWidth = 969
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,14 +22,14 @@ object Form1: TForm1
   object Shape1: TShape
     Left = 0
     Top = 0
-    Width = 969
-    Height = 508
+    Width = 953
+    Height = 430
     Align = alClient
-    Brush.Color = clSilver
+    Brush.Color = clGray
     Pen.Color = clGray
   end
   object Image1: TImage
-    Left = 32
+    Left = 40
     Top = 136
     Width = 20
     Height = 170
@@ -459,8 +465,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image2: TImage
-    Left = 928
-    Top = 192
+    Left = 896
+    Top = 160
     Width = 20
     Height = 170
     AutoSize = True
@@ -895,8 +901,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image3: TImage
-    Left = 408
-    Top = 224
+    Left = 456
+    Top = 280
     Width = 32
     Height = 32
     AutoSize = True
@@ -1001,5 +1007,11 @@ object Form1: TForm1
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFF}
     Transparent = True
+  end
+  object Timer1: TTimer
+    Interval = 15
+    OnTimer = Timer1Timer
+    Left = 64
+    Top = 32
   end
 end

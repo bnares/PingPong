@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 248
-  Top = 96
+  Left = 179
+  Top = 252
   Width = 969
   Height = 469
   Caption = 'Form1'
@@ -17,6 +17,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape
@@ -901,8 +902,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image3: TImage
-    Left = 456
-    Top = 280
+    Left = 448
+    Top = 240
     Width = 32
     Height = 32
     AutoSize = True
@@ -1008,10 +1009,34 @@ object Form1: TForm1
       FFFF}
     Transparent = True
   end
+  object Button1: TButton
+    Left = 392
+    Top = 168
+    Width = 113
+    Height = 49
+    Caption = 'Again?'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnClick = Button1Click
+  end
   object Timer1: TTimer
     Interval = 15
     OnTimer = Timer1Timer
     Left = 64
     Top = 32
+  end
+  object lewy: TTimer
+    Left = 32
+    Top = 88
+  end
+  object prawy: TTimer
+    Left = 96
+    Top = 96
   end
 end
