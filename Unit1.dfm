@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 244
-  Top = 77
+  Left = 150
+  Top = 118
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -467,7 +467,7 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image2: TImage
-    Left = 896
+    Left = 888
     Top = 160
     Width = 20
     Height = 170
@@ -903,8 +903,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image3: TImage
-    Left = 448
-    Top = 240
+    Left = 472
+    Top = 24
     Width = 32
     Height = 32
     AutoSize = True

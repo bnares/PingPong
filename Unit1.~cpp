@@ -61,6 +61,19 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      Button1 ->Visible = true;
 
     }
+
+    if((Image3 -> Top > Image1 -> Top) && (Image3 -> Top + Image3 -> Height < Image1 -> Top +Image1 -> Height) &&
+        (Image1 -> Left + Image1 -> Width  >= Image3 -> Left))
+        {
+          x = -x;
+          y = -y;
+        }
+    if((Image3 -> Top > Image2 -> Top) &&(Image3 -> Top + Image3 ->Height < Image2 -> Top +Image2->Height) &&
+    (Image3 -> Left + Image3 -> Width == Image2 -> Left))
+    {
+     x = -x;
+     y = -y;
+    }
 }
 //---------------------------------------------------------------------------
 
@@ -100,6 +113,16 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
     {
      prawyDol ->Enabled =true;
     }
+
+    if(Key == 0x41)
+    {
+     lewyGora -> Enabled = true;
+    }
+
+    if(Key == 0x5A)
+    {
+     lewyDol -> Enabled =true;
+    }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
@@ -114,5 +137,34 @@ if(Key == VK_UP)
     {
      prawyDol ->Enabled =false;
     }
+
+
+    if(Key == 0x41)
+    {
+     lewyGora -> Enabled = false;
+    }
+
+    if(Key == 0x5A)
+    {
+     lewyDol -> Enabled =false;
+    }
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::lewyDolTimer(TObject *Sender)
+{
+  if(Image1 -> Top + Image1 -> Height <= Shape1 ->Height-3)
+  {
+      Image1 -> Top +=10;
+  }
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::lewyGoraTimer(TObject *Sender)
+{
+  if(Image1 ->Top >= 3)
+  {
+  Image1 ->Top-=10;
+  }
 }
 //---------------------------------------------------------------------------

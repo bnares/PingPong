@@ -21,6 +21,8 @@ __published:	// IDE-managed Components
         TTimer *prawyGora;
         TTimer *prawyDol;
         TButton *Button1;
+        TTimer *lewyDol;
+        TTimer *lewyGora;
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall prawyGoraTimer(TObject *Sender);
@@ -29,6 +31,8 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
+        void __fastcall lewyDolTimer(TObject *Sender);
+        void __fastcall lewyGoraTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
