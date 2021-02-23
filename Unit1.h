@@ -18,12 +18,17 @@ __published:	// IDE-managed Components
         TImage *Image2;
         TImage *Image3;
         TTimer *Timer1;
-        TTimer *lewy;
-        TTimer *prawy;
+        TTimer *prawyGora;
+        TTimer *prawyDol;
         TButton *Button1;
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
-        void __fastcall FormActivate(TObject *Sender);
+        void __fastcall prawyGoraTimer(TObject *Sender);
+        void __fastcall prawyDolTimer(TObject *Sender);
+        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+          TShiftState Shift);
+        void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
+          TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

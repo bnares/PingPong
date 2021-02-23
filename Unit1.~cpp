@@ -9,6 +9,9 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 
+
+
+
 int x =-5;
 int y = -5;
 //---------------------------------------------------------------------------
@@ -47,6 +50,30 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     {
       x = x*-1;
     }
+
+    //przegrana
+
+    if((Image3 ->Left<= Image1 ->Left-30) ||
+    (Image3 -> Left  >= Image2->Left +Image2->Width-10))
+    {
+
+     Timer1 -> Enabled =false;
+     Button1 ->Visible = true;
+
+    }
 }
 //---------------------------------------------------------------------------
- 
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+      Image3 ->Left =448;
+      Image3 ->Top = 240;
+      Timer1 ->Enabled =true;
+      Button1 ->Visible = false;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormActivate(TObject *Sender)
+{
+//Button1 ->Visible = false;
+}
+//---------------------------------------------------------------------------

@@ -11,7 +11,7 @@ TForm1 *Form1;
 
 
 
-
+int paletka =10;
 int x =-5;
 int y = -5;
 //---------------------------------------------------------------------------
@@ -72,8 +72,47 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
       Button1 ->Visible = false;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormActivate(TObject *Sender)
+void __fastcall TForm1::prawyGoraTimer(TObject *Sender)
 {
-//Button1 ->Visible = false;
+  if(Image2 ->Top>=3)
+  {
+  Image2 ->Top -=10;
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::prawyDolTimer(TObject *Sender)
+{
+  if(Image2->Top+Image2 -> Height <=Shape1->Height-3)
+  {
+  Image2 ->Top +=10;
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+    if(Key == VK_UP)
+    {
+      prawyGora ->Enabled =true;
+    }
+
+    if(Key == VK_DOWN)
+    {
+     prawyDol ->Enabled =true;
+    }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+if(Key == VK_UP)
+    {
+      prawyGora ->Enabled =false;
+    }
+
+    if(Key == VK_DOWN)
+    {
+     prawyDol ->Enabled =false;
+    }
 }
 //---------------------------------------------------------------------------
