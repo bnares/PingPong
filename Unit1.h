@@ -17,6 +17,8 @@ __published:	// IDE-managed Components
         TImage *Image1;
         TImage *Image2;
         TImage *Image3;
+        TTimer *Timer1;
+        void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
