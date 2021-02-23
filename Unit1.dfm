@@ -1046,4 +1046,18 @@ object Form1: TForm1
     Left = 864
     Top = 96
   end
+  object lewyDol: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = lewyDolTimer
+    Left = 88
+    Top = 88
+  end
+  object lewyGora: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = lewyGoraTimer
+    Left = 80
+    Top = 40
+  end
 end

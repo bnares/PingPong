@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = 179
-  Top = 252
+  Left = 244
+  Top = 77
   Width = 969
-  Height = 469
+  Height = 600
   Caption = 'Form1'
   Color = clBtnFace
-  Constraints.MaxHeight = 469
+  Constraints.MaxHeight = 600
   Constraints.MaxWidth = 969
-  Constraints.MinHeight = 469
+  Constraints.MinHeight = 600
   Constraints.MinWidth = 969
   UseDockManager = True
   DockSite = True
@@ -17,14 +17,15 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
-  OnActivate = FormActivate
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape
     Left = 0
     Top = 0
     Width = 953
-    Height = 430
+    Height = 561
     Align = alClient
     Brush.Color = clGray
     Pen.Color = clGray
@@ -1028,15 +1029,21 @@ object Form1: TForm1
   object Timer1: TTimer
     Interval = 15
     OnTimer = Timer1Timer
-    Left = 64
-    Top = 32
+    Left = 432
+    Top = 16
   end
-  object lewy: TTimer
-    Left = 32
-    Top = 88
+  object prawyGora: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = prawyGoraTimer
+    Left = 856
+    Top = 56
   end
-  object prawy: TTimer
-    Left = 96
+  object prawyDol: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = prawyDolTimer
+    Left = 864
     Top = 96
   end
 end

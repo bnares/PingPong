@@ -100,6 +100,16 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
     {
      prawyDol ->Enabled =true;
     }
+
+    if(Key == 0x41)
+    {
+     lewyGora -> Enabled = true;
+    }
+
+    if(Key == 0x5A)
+    {
+     lewyDol -> Enabled =true;
+    }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
@@ -114,5 +124,27 @@ if(Key == VK_UP)
     {
      prawyDol ->Enabled =false;
     }
+
+
+    if(Key == 0x41)
+    {
+     lewyGora -> Enabled = false;
+    }
+
+    if(Key == 0x5A)
+    {
+     lewyDol -> Enabled =false;
+    }
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::lewyDolTimer(TObject *Sender)
+{
+  Image1 -> Top +=10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::lewyGoraTimer(TObject *Sender)
+{
+  Image1 ->Top-=10;        
 }
 //---------------------------------------------------------------------------
