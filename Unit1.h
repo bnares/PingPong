@@ -23,6 +23,7 @@ __published:	// IDE-managed Components
         TButton *Button1;
         TTimer *lewyDol;
         TTimer *lewyGora;
+        TLabel *Label1;
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall prawyGoraTimer(TObject *Sender);
