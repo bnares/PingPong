@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 91
-  Top = 164
+  Left = 286
+  Top = 63
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -18,6 +18,7 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
@@ -904,8 +905,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image3: TImage
-    Left = 808
-    Top = 192
+    Left = 608
+    Top = 224
     Width = 32
     Height = 32
     AutoSize = True
@@ -1053,8 +1054,24 @@ object Form1: TForm1
     ParentFont = False
     Visible = False
   end
+  object CGauge1: TCGauge
+    Left = 152
+    Top = 8
+    Width = 100
+    Height = 30
+    HelpContext = 50
+    ForeColor = clRed
+    Progress = 100
+  end
+  object CGauge2: TCGauge
+    Left = 624
+    Top = 8
+    Width = 100
+    Height = 30
+    Progress = 100
+  end
   object Button1: TButton
-    Left = 392
+    Left = 376
     Top = 168
     Width = 153
     Height = 49
@@ -1070,7 +1087,7 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 392
+    Left = 376
     Top = 112
     Width = 153
     Height = 41

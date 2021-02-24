@@ -9,6 +9,7 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+#include "CGAUGES.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -28,6 +29,8 @@ __published:	// IDE-managed Components
         TLabel *Label3;
         TButton *Button2;
         TButton *Button3;
+        TCGauge *CGauge1;
+        TCGauge *CGauge2;
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall prawyGoraTimer(TObject *Sender);
@@ -41,6 +44,7 @@ __published:	// IDE-managed Components
         void __fastcall Button2Click(TObject *Sender);
         void __fastcall FormActivate(TObject *Sender);
         void __fastcall Button3Click(TObject *Sender);
+        void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

@@ -6,12 +6,13 @@
 #include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "CGAUGES"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 
 
 
-int velocity = -1;
+int obstacleVelocity = -1;
 int iloscOdbic =0;
 AnsiString text ="";
 int zwyciestwaLewego=0;
@@ -35,8 +36,26 @@ void prawyPrzegrywa()
      wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
      Form1 -> Label3 ->Caption = wynik;
      Form1 -> Label3 ->Visible = true;
+     Form1 -> CGauge2 -> Progress = Form1 -> CGauge2 ->Progress -25;
      x = -5;
      y = -5;
+
+}
+
+void strataZycia()
+{
+  if(Form1 -> CGauge1 ->Progress ==0)
+  {
+        ShowMessage("Wygraly Prawe");
+        Form1 -> Button2 -> Enabled = false;
+  }
+
+  if(Form1 -> CGauge2 -> Progress ==0)
+  {
+     ShowMessage("Wygraly Lewe");
+     Form1 -> Button2 -> Enabled = false;
+  }
+
 
 }
 
@@ -85,6 +104,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
     {
      lewyPrzegrywa();
+     strataZycia();
 
     }
 
@@ -94,6 +114,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     {
 
      prawyPrzegrywa();
+     strataZycia();
     }
 
     //odbija lewy
@@ -101,7 +122,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     if((Image3 -> Top < Image1 -> Top + Image1 ->Height) && (Image3 -> Top + Image3 -> Height > Image1 -> Top) &&
         (Image1 -> Left + Image1 -> Width+5  >= Image3 -> Left))
         {
-          velocity = -velocity;
+          //velocity = -velocity;
           iloscOdbic ++;
           x = -x;
           y = -y;
@@ -109,7 +130,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
           Label1 -> Caption = "Liczba odbic: "+text;
           if(iloscOdbic%5==0)
           {
-           x = x+2;
+           x = x+1;
 
           }
 
@@ -128,7 +149,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     (Image3 -> Left + Image3 -> Width-5 >= Image2 -> Left))
     {
      iloscOdbic ++;
-     velocity = -velocity;
+     //velocity = -velocity;
      x = -x;
      y = -y;
      text = IntToStr(iloscOdbic);
@@ -156,6 +177,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
       Timer1 ->Enabled =true;
       Button1 ->Visible = false;
       Button2 -> Visible =false;
+      Button2 -> Enabled = true;
       x = -5;
       y =-5;
       iloscOdbic =0;
@@ -164,6 +186,9 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
       Label3 -> Visible = false;
       zwyciestwaLewego =0;
       zwyciestwaPrawego =0;
+      CGauge1 -> Progress =100;
+      CGauge2 -> Progress =100;
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::prawyGoraTimer(TObject *Sender)
@@ -295,8 +320,26 @@ void lewyPrzegrywa()
      wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
      Form1 -> Label3 ->Caption = wynik;
      Form1 -> Label3 ->Visible = true;
+     Form1 -> CGauge1 -> Progress = Form1 -> CGauge1 ->Progress -25;
      x = -5;
      y = -5;
 
 }
+
+
+
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+        ShowMessage("Witaj w grze!.");
+}
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------
 
