@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 96
-  Top = 112
+  Left = 172
+  Top = 111
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -1038,12 +1038,26 @@ object Form1: TForm1
     ParentFont = False
     Visible = False
   end
-  object Button1: TButton
+  object Label3: TLabel
     Left = 408
+    Top = 344
+    Width = 90
+    Height = 36
+    Caption = 'Label3'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 392
     Top = 168
-    Width = 113
+    Width = 153
     Height = 49
-    Caption = 'Again?'
+    Caption = 'Nowa gra'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -31
@@ -1053,6 +1067,22 @@ object Form1: TForm1
     TabOrder = 0
     Visible = False
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 392
+    Top = 112
+    Width = 153
+    Height = 41
+    Caption = 'Kontynuuj'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clLime
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = Button2Click
   end
   object Timer1: TTimer
     Interval = 5

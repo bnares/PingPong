@@ -71,6 +71,8 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
      Label3 ->Caption = wynik;
      Label3 ->Visible = true;
+     x = -5;
+     y = -5;
 
     }
 
@@ -88,6 +90,8 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
      Label3 ->Caption = wynik;
      Label3 ->Visible = true;
+     x = -5;
+     y = -5;
 
 
     }
@@ -97,10 +101,15 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
         {
           velocity = -velocity;
           iloscOdbic ++;
-          x = -x + velocity;
+          x = -x;
           y = -y;
           text = IntToStr(iloscOdbic);
           Label1 -> Caption = "Liczba odbic: "+text;
+          if(iloscOdbic%5==0)
+          {
+           x = x+2;
+           y = y+2;
+          }
 
         }
     if((Image3 -> Top > Image2 -> Top) &&(Image3 -> Top + Image3 ->Height < Image2 -> Top +Image2->Height) &&
@@ -109,9 +118,14 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      iloscOdbic ++;
      velocity = -velocity;
      x = -x;
-     y = -y + velocity;
+     y = -y;
      text = IntToStr(iloscOdbic);
      Label1 -> Caption = "Liczba odbic: "+text;
+     if(iloscOdbic%5==0)
+     {
+      x = x-1;
+      y = y-1;
+     }
 
     }
 }
@@ -230,7 +244,6 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
       Label1 -> Visible = false;
       Label2 -> Visible = false;
       Label3 -> Visible = false;
-      //text ="0";
       Label1 -> Caption = "Liczba odbic: 0";
 
 
