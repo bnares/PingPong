@@ -53,15 +53,30 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
       x = x*-1;
     }
 
-    //przegrana
+    //przegrana lewy
 
-    if((Image3 ->Left<= Image1 ->Left-30) ||
-    (Image3 -> Left  >= Image2->Left +Image2->Width-10))
+    if((Image3 ->Left<= Image1 ->Left-30))
+
     {
 
      Timer1 -> Enabled =false;
      Button1 ->Visible = true;
      Label1 -> Visible = true;
+     Label2 -> Caption = "Punkt dla Gracza Prawego >>";
+     Label2 -> Visible = true;
+
+    }
+
+    //przegrana prawy
+
+    if(Image3 -> Left  >= Image2->Left +Image2->Width-10)
+    {
+     Timer1 -> Enabled =false;
+     Button1 ->Visible = true;
+     Label1 -> Visible = true;
+     Label2 -> Caption = "<<Punkt dla Gracza Lewego";
+     Label2 -> Visible = true;
+
 
     }
 
@@ -100,6 +115,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
       y =-5;
       iloscOdbic =0;
       Label1 -> Visible = false;
+      Label2 -> Visible = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::prawyGoraTimer(TObject *Sender)
