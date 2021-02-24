@@ -250,3 +250,16 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::FormActivate(TObject *Sender)
+{
+    Button3 -> Visible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+ Timer1 -> Enabled = true;
+ Button3 -> Visible = false;
+}
+//---------------------------------------------------------------------------
+
