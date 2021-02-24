@@ -108,7 +108,14 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
           if(iloscOdbic%5==0)
           {
            x = x+2;
-           y = y+2;
+
+          }
+
+          if(x>15)
+          {
+           x =8;
+           y =5;
+
           }
 
         }
@@ -124,7 +131,13 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      if(iloscOdbic%5==0)
      {
       x = x-1;
-      y = y-1;
+
+     }
+     if(x>15)
+     {
+     x =8;
+     y =5;
+
      }
 
     }

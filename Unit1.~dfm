@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 234
-  Top = 67
+  Left = 185
+  Top = 136
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -17,6 +17,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnActivate = FormActivate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
@@ -1084,7 +1085,24 @@ object Form1: TForm1
     Visible = False
     OnClick = Button2Click
   end
+  object Button3: TButton
+    Left = 360
+    Top = 384
+    Width = 177
+    Height = 89
+    Caption = 'Rozpocznij'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+    OnClick = Button3Click
+  end
   object Timer1: TTimer
+    Enabled = False
     Interval = 5
     OnTimer = Timer1Timer
     Left = 432
