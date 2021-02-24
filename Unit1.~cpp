@@ -19,6 +19,28 @@ int zwyciestwaPrawego =0;
 AnsiString wynik = "";
 int x =-5;
 int y = -5;
+
+
+void lewyPrzegrywa();
+
+void prawyPrzegrywa()
+{
+    zwyciestwaLewego ++;
+     Form1 -> Timer1 -> Enabled =false;
+     Form1 -> Button1 ->Visible = true;
+     Form1 -> Button2 ->Visible =true;
+     Form1 -> Label1 -> Visible = true;
+     Form1 -> Label2 -> Caption = "<<Punkt dla Gracza Lewego";
+     Form1 -> Label2 -> Visible = true;
+     wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
+     Form1 -> Label3 ->Caption = wynik;
+     Form1 -> Label3 ->Visible = true;
+     x = -5;
+     y = -5;
+
+}
+
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -30,6 +52,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
     Image3 -> Left +=x;
     Image3 -> Top +=y;
+
     //bok gora
     if(Image3 -> Top <=3)
     {
@@ -61,18 +84,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     if((Image3 ->Left<= Image1 ->Left-30))
 
     {
-     zwyciestwaPrawego ++;
-     Timer1 -> Enabled =false;
-     Button1 ->Visible = true;
-     Button2 ->Visible = true;
-     Label1 -> Visible = true;
-     Label2 -> Caption = "Punkt dla Gracza Prawego >>";
-     Label2 -> Visible = true;
-     wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
-     Label3 ->Caption = wynik;
-     Label3 ->Visible = true;
-     x = -5;
-     y = -5;
+     lewyPrzegrywa();
 
     }
 
@@ -80,24 +92,14 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
     if(Image3 -> Left  >= Image2->Left +Image2->Width-10)
     {
-     zwyciestwaLewego ++;
-     Timer1 -> Enabled =false;
-     Button1 ->Visible = true;
-     Button2 ->Visible =true;
-     Label1 -> Visible = true;
-     Label2 -> Caption = "<<Punkt dla Gracza Lewego";
-     Label2 -> Visible = true;
-     wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
-     Label3 ->Caption = wynik;
-     Label3 ->Visible = true;
-     x = -5;
-     y = -5;
 
-
+     prawyPrzegrywa();
     }
 
-    if((Image3 -> Top > Image1 -> Top) && (Image3 -> Top + Image3 -> Height < Image1 -> Top +Image1 -> Height) &&
-        (Image1 -> Left + Image1 -> Width  >= Image3 -> Left))
+    //odbija lewy
+    
+    if((Image3 -> Top < Image1 -> Top + Image1 ->Height) && (Image3 -> Top + Image3 -> Height > Image1 -> Top) &&
+        (Image1 -> Left + Image1 -> Width+5  >= Image3 -> Left))
         {
           velocity = -velocity;
           iloscOdbic ++;
@@ -119,8 +121,11 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
           }
 
         }
-    if((Image3 -> Top > Image2 -> Top) &&(Image3 -> Top + Image3 ->Height < Image2 -> Top +Image2->Height) &&
-    (Image3 -> Left + Image3 -> Width >= Image2 -> Left))
+
+    //odbija prawy
+
+    if((Image3 -> Top < Image2 -> Top + Image2 -> Height) &&(Image3 -> Top + Image3 ->Height > Image2 -> Top) &&
+    (Image3 -> Left + Image3 -> Width-5 >= Image2 -> Left))
     {
      iloscOdbic ++;
      velocity = -velocity;
@@ -275,4 +280,23 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
  Button3 -> Visible = false;
 }
 //---------------------------------------------------------------------------
+
+
+
+void lewyPrzegrywa()
+{
+     zwyciestwaPrawego ++;
+     Form1 -> Timer1 -> Enabled =false;
+     Form1 -> Button1 ->Visible = true;
+     Form1 -> Button2 ->Visible = true;
+     Form1 -> Label1 -> Visible = true;
+     Form1 -> Label2 -> Caption = "Punkt dla Gracza Prawego >>";
+     Form1 -> Label2 -> Visible = true;
+     wynik = IntToStr(zwyciestwaLewego)+" : "+IntToStr(zwyciestwaPrawego);
+     Form1 -> Label3 ->Caption = wynik;
+     Form1 -> Label3 ->Visible = true;
+     x = -5;
+     y = -5;
+
+}
 

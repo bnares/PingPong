@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 185
-  Top = 136
+  Left = 91
+  Top = 164
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -1014,7 +1014,7 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 352
     Top = 240
-    Width = 217
+    Width = 192
     Height = 36
     Caption = 'Liczba odbic : '
     Font.Charset = DEFAULT_CHARSET
@@ -1028,7 +1028,7 @@ object Form1: TForm1
   object Label2: TLabel
     Left = 264
     Top = 296
-    Width = 305
+    Width = 90
     Height = 36
     Caption = 'Label2'
     Font.Charset = DEFAULT_CHARSET
