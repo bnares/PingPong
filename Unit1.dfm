@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 286
-  Top = 63
+  Left = 158
+  Top = 66
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -1055,7 +1055,7 @@ object Form1: TForm1
     Visible = False
   end
   object CGauge1: TCGauge
-    Left = 152
+    Left = 150
     Top = 8
     Width = 100
     Height = 30
@@ -1064,7 +1064,7 @@ object Form1: TForm1
     Progress = 100
   end
   object CGauge2: TCGauge
-    Left = 624
+    Left = 700
     Top = 8
     Width = 100
     Height = 30

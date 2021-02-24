@@ -122,7 +122,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     if((Image3 -> Top < Image1 -> Top + Image1 ->Height) && (Image3 -> Top + Image3 -> Height > Image1 -> Top) &&
         (Image1 -> Left + Image1 -> Width+5  >= Image3 -> Left))
         {
-          //velocity = -velocity;
+
           iloscOdbic ++;
           x = -x;
           y = -y;
@@ -130,14 +130,14 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
           Label1 -> Caption = "Liczba odbic: "+text;
           if(iloscOdbic%5==0)
           {
-           x = x+1;
+           x = x+2;
 
           }
 
-          if(x>15)
+          if(x>20)
           {
-           x =8;
-           y =5;
+           x =10;
+           y =6;
 
           }
 
@@ -149,7 +149,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     (Image3 -> Left + Image3 -> Width-5 >= Image2 -> Left))
     {
      iloscOdbic ++;
-     //velocity = -velocity;
+
      x = -x;
      y = -y;
      text = IntToStr(iloscOdbic);
@@ -159,10 +159,10 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
       x = x-1;
 
      }
-     if(x>15)
+     if(x>20)
      {
-     x =8;
-     y =5;
+     x =10;
+     y =6;
 
      }
 
