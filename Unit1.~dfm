@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 150
-  Top = 118
+  Left = 145
+  Top = 75
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -903,8 +903,8 @@ object Form1: TForm1
       1EFF17291EFF17291EFF17291EFF}
   end
   object Image3: TImage
-    Left = 472
-    Top = 24
+    Left = 808
+    Top = 192
     Width = 32
     Height = 32
     AutoSize = True
@@ -1010,6 +1010,20 @@ object Form1: TForm1
       FFFF}
     Transparent = True
   end
+  object Label1: TLabel
+    Left = 336
+    Top = 240
+    Width = 217
+    Height = 36
+    Caption = 'Liczba odbic : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
   object Button1: TButton
     Left = 392
     Top = 168
@@ -1027,7 +1041,7 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Timer1: TTimer
-    Interval = 15
+    Interval = 5
     OnTimer = Timer1Timer
     Left = 432
     Top = 16

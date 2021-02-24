@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 145
-  Top = 75
+  Left = 96
+  Top = 112
   Width = 969
   Height = 600
   Caption = 'Form1'
@@ -1011,7 +1011,7 @@ object Form1: TForm1
     Transparent = True
   end
   object Label1: TLabel
-    Left = 336
+    Left = 352
     Top = 240
     Width = 217
     Height = 36
@@ -1024,8 +1024,22 @@ object Form1: TForm1
     ParentFont = False
     Visible = False
   end
+  object Label2: TLabel
+    Left = 264
+    Top = 296
+    Width = 305
+    Height = 36
+    Caption = 'Label2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
   object Button1: TButton
-    Left = 392
+    Left = 408
     Top = 168
     Width = 113
     Height = 49

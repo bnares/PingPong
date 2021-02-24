@@ -11,7 +11,9 @@ TForm1 *Form1;
 
 
 
-int paletka =10;
+int velocity = -5;
+int iloscOdbic =0;
+AnsiString text ="";
 int x =-5;
 int y = -5;
 //---------------------------------------------------------------------------
@@ -59,20 +61,31 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
      Timer1 -> Enabled =false;
      Button1 ->Visible = true;
+     Label1 -> Visible = true;
 
     }
 
     if((Image3 -> Top > Image1 -> Top) && (Image3 -> Top + Image3 -> Height < Image1 -> Top +Image1 -> Height) &&
         (Image1 -> Left + Image1 -> Width  >= Image3 -> Left))
         {
-          x = -x;
+          velocity = -velocity;
+          iloscOdbic ++;
+          x = -x + velocity *0.2;
           y = -y;
+          text = IntToStr(iloscOdbic);
+          Label1 -> Caption = "Liczba odbic: "+text;
+
         }
     if((Image3 -> Top > Image2 -> Top) &&(Image3 -> Top + Image3 ->Height < Image2 -> Top +Image2->Height) &&
-    (Image3 -> Left + Image3 -> Width == Image2 -> Left))
+    (Image3 -> Left + Image3 -> Width >= Image2 -> Left))
     {
+     iloscOdbic ++;
+     velocity = -velocity;
      x = -x;
-     y = -y;
+     y = -y + velocity*0.2;
+     text = IntToStr(iloscOdbic);
+     Label1 -> Caption = "Liczba odbic: "+text;
+
     }
 }
 //---------------------------------------------------------------------------
@@ -83,6 +96,10 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
       Image3 ->Top = 240;
       Timer1 ->Enabled =true;
       Button1 ->Visible = false;
+      x = -5;
+      y =-5;
+      iloscOdbic =0;
+      Label1 -> Visible = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::prawyGoraTimer(TObject *Sender)
