@@ -125,21 +125,16 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
           iloscOdbic ++;
           x = -x;
-          y = -y;
+          //y = -y;
           text = IntToStr(iloscOdbic);
           Label1 -> Caption = "Liczba odbic: "+text;
           if(iloscOdbic%5==0)
           {
-           x = x+2;
+           x = x+ x*1.05;
 
           }
 
-          if(x>20)
-          {
-           x =10;
-           y =6;
 
-          }
 
         }
 
@@ -151,20 +146,15 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
      iloscOdbic ++;
 
      x = -x;
-     y = -y;
+     //y = -y;
      text = IntToStr(iloscOdbic);
      Label1 -> Caption = "Liczba odbic: "+text;
      if(iloscOdbic%5==0)
      {
-      x = x-1;
+      x = x + x*1.05;
 
      }
-     if(x>20)
-     {
-     x =10;
-     y =6;
 
-     }
 
     }
 }
